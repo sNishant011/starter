@@ -6,8 +6,11 @@ local keymap = vim.api.nvim_set_keymap
 keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- disable replace paste
-keymap("n", "x", '"_x', { silent = true })
-keymap("n", "X", '"_X', { silent = true })
-keymap("v", "x", '"_x', { silent = true })
-keymap("v", "X", '"_X', { silent = true })
 keymap("v", "p", '"_dP', { silent = true })
+
+-- write out
+keymap("n", "<leader>wo", ":w<CR>", { silent = true })
+
+-- toggle term
+keymap("n", "<F7>", ":ToggleTerm<CR>", { silent = true })
+keymap("t", "<F7>", "<C-\\><C-n>:ToggleTerm<CR>", { silent = true })
